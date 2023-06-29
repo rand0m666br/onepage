@@ -308,3 +308,46 @@ section#empresa img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px #ffce00;
 }
+
+.carrossel {
+    width: 900px;
+    position: relative;
+    margin: auto;
+    text-align: justify;
+    overflow: hidden;
+    padding: 80px;
+}
+.carrossel span {
+    width: 100%;
+    height: auto;
+    display: none;
+    font-size: 30px;
+    padding: 20px;
+}
+.carrossel span.active {
+    display: block;
+}
+.carrossel .volta, .carrossel .frente {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    transform: translateY(-50%);
+    color: #FFF;
+    background-color: #333;
+    padding: 10px;
+    cursor: pointer;
+    transition: left 0.4s;
+}
+.carrossel .volta {
+    left: 10px;
+    margin-right: 100px;
+}
+.carrossel .frente {
+    right: 10px;
+    margin-left: 100px;
+}
+strong {
+    color: red;
+    font-size: 40px;
+    display: block;
+}

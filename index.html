@@ -52,17 +52,26 @@
             </p>
         </article>
     </section>
-    
+
     <section id="empresa">
         <h2 class="titulo">Empresa</h2>
         <div class="borda"></div>
         <h3 class="subtitulo">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ut commodi modi velit incidunt esse facere, veritatis iste tempora nihil ipsa voluptatem eum illum laudantium illo voluptas earum placeat exercitationem?
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ut commodi modi velit incidunt esse facere, veritatis iste tempora nihil ipsa voluptatem eum illum laudantium illo voluptas earum placeat exercitationem?
         Ullam cum repudiandae, omnis sed impedit ipsum iste vero illum delectus totam quos voluptas consectetur amet numquam temporibus consequuntur architecto! Aliquid reprehenderit dolorum esse nobis saepe magnam aut odio enim!
         Nobis voluptate mollitia a architecto libero molestias culpa ducimus sunt laborum nam possimus pariatur quasi, velit rem quae. Exercitationem laboriosam corrupti molestiae quasi blanditiis temporibus quibusdam corporis deleniti recusandae id?</p>
-        <img src="style/imagens/Captura de tela 2023-06-26 094834.png" alt="">
+        <img src="style/imagens/Captura de tela 2023-06-26 094834.png" alt=""> -->
+        <div class="carrossel">
+            <span class="missao"><strong>Missão</strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquid placeat, voluptate voluptates minus et facere in dolore, id a temporibus nostrum, assumenda
+                labore quasi! Totam beatae labore velit porro possimus.</span>
+            <span class="visao"><strong>Visão</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nihil velit iure commodi aliquid perferendis ea, at a ut labore laudantium. Nobis eaque ut at pariatur veritatis tempora. Quasi, corporis?</span>
+            <span class="valores"><strong>Valores</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio neque ipsam voluptas odio, adipisci quam expedita error, aperiam repellat sapiente vero quos facere nam praesentium! Reiciendis ea ratione officiis.</span>
+            <a class="volta">&#10094;</a>
+            <a class="frente">&#10095;</a>
+        </div>
     </section>
-    
+
     <section id="portfolio">
         <h2 class="titulo">Portfólio</h2>
         <div class="borda"></div>
@@ -110,7 +119,7 @@
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </article>
     </section>
-    
+
     <section id="contato">
         <h2 class="titulo">Fale Conosco</h2>
         <div class="borda"></div>
@@ -129,33 +138,66 @@
 
     <footer class="footer">
         <div class="waves">
-          <div class="wave" id="wave1"></div>
-          <div class="wave" id="wave2"></div>
-          <div class="wave" id="wave3"></div>
-          <div class="wave" id="wave4"></div>
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
         </div>
         <ul class="social-icon">
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <i class="fa-brands fa-facebook"></i>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <i class="fa-brands fa-twitter"></i></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <i class="fa-brands fa-instagram"></i></ion-icon>
-            </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <i class="fa-brands fa-twitter"></i></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <i class="fa-brands fa-instagram"></i></ion-icon>
+                </a></li>
         </ul>
         <ul class="menu">
-          <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Serviços</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Portifólio</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Empresa</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Equipe</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Contato</a></li>
-    
+            <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="#servicos">Serviços</a></li>
+            <li class="menu__item"><a class="menu__link" href="#portfolio">Portifólio</a></li>
+            <li class="menu__item"><a class="menu__link" href="#empresa">Empresa</a></li>
+            <li class="menu__item"><a class="menu__link" href="#equipe">Equipe</a></li>
+            <li class="menu__item"><a class="menu__link" href="#contato">Contato</a></li>
+
         </ul>
         <p>&copy;2023 Rand0m | Todos Direitos Reservados</p>
-      </footer>
+    </footer>
+
+    <script>
+        // let elementIndex = 0;
+        let index = 0;
+        elementos();
+
+        function elementos() {
+            let i;
+            let elements = document.getElementsByClassName("carrossel")[0].getElementsByTagName("span");
+            let volta = document.getElementsByClassName("volta")[0];
+            let frente = document.getElementsByClassName("frente")[0];
+
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("active");
+            }
+            index++;
+            if (index > elements.length) {
+                index = 1;
+            }
+            // se a variável index for maior que a quantidade de itens, mudar o valor da variável para 1
+            elements[index - 1].classList.add("active");
+            // o elemento atual do carrossel
+            volta.onclick = function () {
+                index -= 2;
+                // quando a seta de voltar for ciclada decrementa 2, para voltar ao elemento anterior
+                elementos();
+            }
+            frente.onclick = function () {
+                elementos();
+            }
+            setInterval(elementos, 10000);
+        }
+    </script>
 </body>
 
 </html>
