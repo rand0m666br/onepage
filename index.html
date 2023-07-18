@@ -33,23 +33,17 @@
 
     <section id="servicos">
         <h2 class="titulo">SERVIÇOS</h2>
-        <div class="borda">
-        </div>
-        <h3 class="subtitulo">Descubra o que podemos fazer por você e por sua empresa!</h3>
+        <div class="borda"> </div>
+        <h3 class="subtitulo">Descubra o que podemos fazer
+            por você e por sua empresa!</h3>
         <article>
-            <p class="iconserv">
-                <i class="fa fa-shopping-cart"></i>
-            </p>
+            <p class="iconserv"> <i class="fa fa-shopping-cart"></i> </p>
         </article>
         <article>
-            <p class="iconserv">
-                <i class="fa-brands fa-grav"></i>
-            </p>
+            <p class="iconserv"> <i class="fa-solid fa-gear"></i> </p>
         </article>
         <article>
-            <p class="iconserv">
-                <i class="fa fa-bath"></i>
-            </p>
+            <p class="iconserv"> <i class="fa-solid fa-skull-crossbones"></i> </p>
         </article>
     </section>
 
@@ -65,8 +59,12 @@
             <span class="missao"><strong>Missão</strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Aliquid placeat, voluptate voluptates minus et facere in dolore, id a temporibus nostrum, assumenda
                 labore quasi! Totam beatae labore velit porro possimus.</span>
-            <span class="visao"><strong>Visão</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nihil velit iure commodi aliquid perferendis ea, at a ut labore laudantium. Nobis eaque ut at pariatur veritatis tempora. Quasi, corporis?</span>
-            <span class="valores"><strong>Valores</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio neque ipsam voluptas odio, adipisci quam expedita error, aperiam repellat sapiente vero quos facere nam praesentium! Reiciendis ea ratione officiis.</span>
+            <span class="visao"><strong>Visão</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nihil
+                velit iure commodi aliquid perferendis ea, at a ut labore laudantium. Nobis eaque ut at pariatur
+                veritatis tempora. Quasi, corporis?</span>
+            <span class="valores"><strong>Valores</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam distinctio neque ipsam voluptas odio, adipisci quam expedita error, aperiam repellat sapiente
+                vero quos facere nam praesentium! Reiciendis ea ratione officiis.</span>
             <a class="volta">&#10094;</a>
             <a class="frente">&#10095;</a>
         </div>
@@ -191,17 +189,14 @@
             // se a variável index for maior que a quantidade de itens, mudar o valor da variável para 1
             elements[index - 1].classList.add("active");
             // o elemento atual do carrossel
-            volta.onclick = function () {
+            volta.onclick = function() {
                 index -= 2;
                 // quando a seta de voltar for ciclada decrementa 2, para voltar ao elemento anterior
                 elementos();
             }
-            frente.onclick = function () {
+            frente.onclick = function() {
                 elementos();
             }
-        }
-        function hideMenu() {
-            document.getElementById("checkbox").checked = false;
         }
         setInterval(elementos, 10000);
     </script>
